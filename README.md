@@ -43,10 +43,10 @@ http://localhost:8000/api/best_candidates/<ID>
  username: admin <br />
  password: 1234
 
- ## Debuger Tool
+ ## Debugger Tool
  open app in the browser and the debug toolbar will appear on the project's page, providing various useful information about execution time, SQL, static files, signals, etc.
 
- 
+
 
  ![dubugger](https://user-images.githubusercontent.com/54041968/129382006-74a2aa8b-ecde-4e6d-8955-ced13e89957c.png)
 
