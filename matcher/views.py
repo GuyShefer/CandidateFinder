@@ -14,10 +14,11 @@ def candidate_finder(request, job_id):
         return Response('Job not found, Please try another ID', 404)
 
     job_title = job.title
-    job_required_skills = [ skill.name for skill in job.skills.all()]
-    
+    job_required_skills = [skill.name for skill in job.skills.all()]
+
     try:
-        candiates_filterd = Candidate.objects.filter(Q(title__icontains=job_title)).filter(skills__name__in=job_required_skills).annotate(total=Count('id')).order_by('-total').prefetch_related('skills')
+        candiates_filterd = Candidate.objects.filter(Q(title__icontains=job_title)).filter(
+            skills__name__in=job_required_skills).annotate(total=Count('id')).order_by('-total').prefetch_related('skills')
     except Candidate.DoesNotExist:
         return Response('No suitable candidates were found for the job', 404)
 
