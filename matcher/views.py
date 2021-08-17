@@ -9,7 +9,7 @@ from django.db.models import Count, Q
 def candidate_finder(request, job_id):
 
     try:
-        job = Job.objects.all().get(id=job_id)
+        job = Job.objects.get(id=job_id)
     except Job.DoesNotExist:
         return Response('Job not found, Please try another ID', 404)
 
